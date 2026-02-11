@@ -1,159 +1,178 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Karibu Grocery | Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karibu Grocery LTD</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Icons -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
-    <!-- Bootstrap Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-
-    <!-- css link -->
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-5">
-          <div class="card p-4 bg-white">
-            <h3 class="text-center mb-3 text-success">
-              <i class="bi bi-cart-fill"></i> Karibu Grocery
-            </h3>
+      <!-- LEFT -->
+      <div class="left">
+        <div class="brand">
+          <!-- LOGO -->
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfRVOW73oQNoZPKcxX1l0Q2a2TFPyeFNWoow&s"
+            alt="Karibu Grocery Logo"
+          />
+          <h1>Karibu <span>Grocery</span> LTD</h1>
+        </div>
 
-            <!-- Tabs -->
-            <ul class="nav nav-pills nav-justified mb-3">
-              <li class="nav-item">
-                <button
-                  class="nav-link active"
-                  data-bs-toggle="pill"
-                  data-bs-target="#login"
-                >
-                  Sign In
-                </button>
-              </li>
-              <li class="nav-item">
-                <button
-                  class="nav-link"
-                  data-bs-toggle="pill"
-                  data-bs-target="#signup"
-                >
-                  Sign Up
-                </button>
-              </li>
-            </ul>
+        <p class="tagline">
+          Manage your Grocery Shop effectively with a modern system.
+        </p>
+      </div>
 
-            <div class="tab-content">
-              <!-- SIGN IN -->
-              <div class="tab-pane fade show active" id="login">
-                <form>
-                  <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Enter email"
-                    />
-                  </div>
+      <!-- RIGHT -->
+      <div class="right">
+        <div class="form-box">
+          <!-- LOGIN -->
+          <form id="loginForm" onsubmit="login(event)">
+            <h2>Sign In</h2>
 
-                  <div class="input-group mb-3">
-                    <input
-                      type="password"
-                      id="loginPassword"
-                      class="form-control"
-                    />
-                    <span
-                      class="input-group-text"
-                      onclick="togglePassword('loginPassword')"
-                    >
-                      <i class="bi bi-eye"></i>
-                    </span>
-                  </div>
-                  <button class="btn btn-success w-100">
-                    <i class="bi bi-box-arrow-in-right"></i> Sign In
-                  </button>
-                </form>
-              </div>
-
-              <!-- SIGN UP -->
-              <div class="tab-pane fade" id="signup">
-                <form>
-                  <div class="mb-2">
-                    <label class="form-label">Username</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Enter username"
-                    />
-                  </div>
-
-                  <div class="mb-2">
-                    <label class="form-label">Email</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Enter email"
-                    />
-                  </div>
-
-                  <div class="mb-2">
-                    <label class="form-label">Password</label>
-                    <input
-                      type="password"
-                      id="signupPassword"
-                      class="form-control"
-                      placeholder="Create password"
-                    />
-                  </div>
-
-                  <div class="mb-2">
-                    <label class="form-label">Role</label>
-                    <select class="form-select" id="roleSelect">
-                      <option selected disabled>Choose role</option>
-                      <option>Director</option>
-                      <option>Manager</option>
-                      <option>Sales Agent</option>
-                    </select>
-                  </div>
-
-                  <div class="mb-2">
-                    <label class="form-label">Branch</label>
-                    <select class="form-select">
-                      <option selected disabled>Select branch</option>
-                      <option>Main Branch</option>
-                      <option>Town Branch</option>
-                      <option>Market Branch</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Contact</label>
-                    <input
-                      type="tel"
-                      class="form-control"
-                      placeholder="Phone number"
-                    />
-                  </div>
-
-                  <button class="btn btn-primary w-100">
-                    <i class="bi bi-person-plus-fill"></i> Create Account
-                  </button>
-                </form>
-              </div>
+            <div class="input-group">
+              <i class="fa fa-user icon-left"></i>
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                required
+                aria-label="Username"
+              />
             </div>
+
+            <div class="input-group">
+              <i class="fa fa-lock icon-left"></i>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+                aria-label="Password"
+              />
+              <i
+                class="fa fa-eye icon-right"
+                id="togglePassword"
+                aria-label="Show or hide password"
+                role="button"
+                tabindex="0"
+              ></i>
+            </div>
+
+            <!-- <div class="forgot">Forgot your password?</div> -->
+
+            <button type="submit" style="width: 100%">Login</button>
+            <!--Providing credentials demo as i've not yet set up backend  -->
+          <div class="demo">
+            <h5>Demo Credentials:</h5>
+            <p>Username:admin <br>
+              password:1234
+            </p>
           </div>
+            <p id="message" aria-live="polite"></p>
+          </form>
+
         </div>
       </div>
     </div>
 
-    <!-- jabascript-->
+    <script src="script.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karibu Grocery LTD</title>
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- LEFT -->
+      <div class="left">
+        <div class="brand">
+          <!-- LOGO -->
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfRVOW73oQNoZPKcxX1l0Q2a2TFPyeFNWoow&s"
+            alt="Karibu Grocery Logo"
+          />
+          <h1>Karibu <span>Grocery</span> LTD</h1>
+        </div>
+
+        <p class="tagline">
+          Manage your Grocery Shop effectively with a modern system.
+        </p>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right">
+        <div class="form-box">
+          <!-- LOGIN -->
+          <form id="loginForm" onsubmit="login(event)">
+            <h2>Sign In</h2>
+
+            <div class="input-group">
+              <i class="fa fa-user icon-left"></i>
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                required
+                aria-label="Username"
+              />
+            </div>
+
+            <div class="input-group">
+              <i class="fa fa-lock icon-left"></i>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+                aria-label="Password"
+              />
+              <i
+                class="fa fa-eye icon-right"
+                id="togglePassword"
+                aria-label="Show or hide password"
+                role="button"
+                tabindex="0"
+              ></i>
+            </div>
+
+            <!-- <div class="forgot">Forgot your password?</div> -->
+
+            <button type="submit" style="width: 100%">Login</button>
+            <!--Providing credentials demo as i've not yet set up backend  -->
+          <div class="demo">
+            <h5>Demo Credentials:</h5>
+            <p>Username:admin <br>
+              password:1234
+            </p>
+          </div>
+            <p id="message" aria-live="polite"></p>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

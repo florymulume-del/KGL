@@ -19,3 +19,6 @@ signupTab.onclick = () => {
   forgotLink.style.display = 'none';
   submitBtn.textContent = 'Create Account';
 };
+
+// procurement form 
+
